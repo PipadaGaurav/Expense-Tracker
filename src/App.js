@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Expense from './components/Expenses/expense';
+import NewExpense from './components/NewExpense/NewExpense';
 
 const App=()=> {
 
@@ -26,10 +27,15 @@ const App=()=> {
     },
   ];
 
+  const addExpensehandler= (expense) => {
+      console.log("AppJS");
+      console.log(expense);
+  }
+
 
   return (
     <div className="App">
-      <h2>LET'S GET STARTED </h2>
+      <NewExpense onAddExpense={addExpensehandler}/>
       <Expense item={expenses}/>
     </div>
   );
